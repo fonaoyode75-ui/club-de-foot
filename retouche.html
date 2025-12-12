@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>YAFA FC - Club de Football</title>
+
 <style>
 body {
     margin: 0;
@@ -11,6 +12,8 @@ body {
     background: #0b6623;
     color: white;
 }
+
+/* HEADER */
 header {
     background: #024f13;
     padding: 25px;
@@ -18,6 +21,7 @@ header {
 }
 header img { width: 90px; }
 header h1 { margin: 10px 0 0; font-size: 2.4rem; }
+
 nav {
     display: flex;
     justify-content: center;
@@ -32,7 +36,10 @@ nav a {
     transition: 0.3s;
 }
 nav a:hover { color: #ffff00; transform: scale(1.1); }
+
 .container { padding: 20px; }
+
+/* ICONS ACCUEIL */
 .icons {
     display: flex;
     justify-content: center;
@@ -50,20 +57,65 @@ nav a:hover { color: #ffff00; transform: scale(1.1); }
     align-items: center;
     color: #024f13;
     font-weight: bold;
-    cursor: pointer;
+    text-decoration: none;
     transition: transform 0.3s, background 0.3s;
     padding: 10px;
 }
 .icon img { width: 50px; margin-bottom: 10px; }
 .icon:hover { transform: scale(1.05); background: #ffff00; color: black; }
-.section-image { width: 100%; max-height: 260px; object-fit: cover; margin: 15px 0; border-radius: 12px; }
-.hidden { display: none; }
-table {
-    width: 100%; border-collapse: collapse; margin-bottom: 30px; background: white; color: black;
+
+/* IMAGES */
+.section-image {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    margin: 15px 0;
+    border-radius: 12px;
 }
-table th, table td { padding: 12px; border: 2px solid #024f13; text-align: center; }
-table th { background: #0b6623; color: white; }
-footer { text-align: center; padding: 15px; background: #024f13; margin-top: 25px; font-size: 0.9rem; }
+
+/* TABLEAU */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background: white;
+    color: black;
+}
+table th, table td {
+    padding: 12px;
+    border: 2px solid #024f13;
+    text-align: center;
+}
+table th {
+    background: #0b6623;
+    color: white;
+}
+
+/* SECTIONS – cachées sauf si ciblées */
+section {
+    display: none;
+}
+
+/* Montre la section ciblée */
+section:target {
+    display: block;
+}
+
+/* ACCUEIL PAR DÉFAUT */
+#accueil {
+    display: block;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #024f13;
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     nav { flex-direction: column; gap: 10px; }
     .icons { flex-direction: column; }
@@ -73,43 +125,41 @@ footer { text-align: center; padding: 15px; background: #024f13; margin-top: 25p
 <body>
 
 <header>
-    <img src="images\yafa logo.jpg" alt="Logo YAFA FC">
+    <img src="images/yafa logo.jpg" alt="Logo YAFA FC">
     <h1>YAFA FC</h1>
+
     <nav>
-        <a href="#accueil" onclick="showSection('accueil')">Accueil</a>
-        <a href="#equipe" onclick="showSection('equipe')">Équipe</a>
-        <a href="#matchs" onclick="showSection('matchs')">Matchs</a>
-        <a href="#contact" onclick="showSection('contact')">Contact</a>
+        <a href="#accueil">Accueil</a>
+        <a href="#equipe">Équipe</a>
+        <a href="#matchs">Matchs</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
 <div class="container">
 
 <!-- ACCUEIL -->
-<div id="accueil">
+<section id="accueil">
     <h2>🏆 Accueil</h2>
-    <p>Bienvenue sur le site officiel du <b>YAFA FC</b>. Fondé en 1998, le club est une référence régionale.  
-       Nous participons aux compétitions régionales et formons de jeunes talents pour l’avenir.</p>
-    <img src="images\yafa1.jpg" class="section-image" alt="Image d'accueil du club">
+    <p>Bienvenue sur le site officiel du <b>YAFA FC</b>.</p>
+    <img src="images/yafa1.jpg" class="section-image">
 
-    <!-- ICÔNES UNIQUEMENT SUR ACCUEIL -->
     <div class="icons">
-        <div class="icon" onclick="showSection('history')">
-            <img src="images\histoire.jpg"> Histoire du club
-        </div>
-        <div class="icon" onclick="showSection('effectif')">
-            <img src="images\effectif.jpg"> Effectifs
-        </div>
-        <div class="icon" onclick="showSection('admin')">
-            <img src="images\adminis.jpg"> Administration
-        </div>
+        <a class="icon" href="#history">
+            <img src="images/histoire.jpg"> Histoire du club
+        </a>
+        <a class="icon" href="#effectif">
+            <img src="images/effectif.jpg"> Effectifs
+        </a>
+        <a class="icon" href="#admin">
+            <img src="images/adminis.jpg"> Administration
+        </a>
     </div>
-</div>
+</section>
 
-<!-- ÉQUIPE -->
-<div id="equipe" class="hidden">
+<!-- EQUIPE -->
+<section id="equipe">
     <h2>👥 Équipe</h2>
-    <p>Voici notre équipe pour la saison 2025 :</p>
     <table>
         <tr><th>Nom</th><th>Poste</th><th>Numéro</th></tr>
         <tr><td>Maxime</td><td>Attaquant</td><td>9</td></tr>
@@ -117,77 +167,58 @@ footer { text-align: center; padding: 15px; background: #024f13; margin-top: 25p
         <tr><td>Yanis</td><td>Défenseur</td><td>4</td></tr>
         <tr><td>Léo</td><td>Gardien</td><td>1</td></tr>
     </table>
-    <img src="images\match.jpg" class="section-image" alt="Photo de l'équipe">
-</div>
+    <img src="images/match.jpg" class="section-image">
+</section>
 
 <!-- MATCHS -->
-<div id="matchs" class="hidden">
+<section id="matchs">
     <h2>⚽ Matchs à venir</h2>
-    <p>Ne manquez pas nos prochains rendez-vous !</p>
     <table>
         <tr><th>Date</th><th>Adversaire</th><th>Lieu</th></tr>
         <tr><td>15/12/2025</td><td>Racing FC</td><td>Domicile</td></tr>
         <tr><td>22/12/2025</td><td>Olympique FC</td><td>Extérieur</td></tr>
         <tr><td>29/12/2025</td><td>AS Lions</td><td>Domicile</td></tr>
     </table>
-    <img src="images\vs.jpg" class="section-image" alt="Matchs à venir">
-</div>
+    <img src="images/vs.jpg" class="section-image">
+</section>
 
 <!-- CONTACT -->
-<div id="contact" class="hidden">
+<section id="contact">
     <h2>📬 Contact</h2>
-    <p>Pour toute information, merci de nous contacter :</p>
     <ul>
         <li>Email : contact@yafafc.com</li>
         <li>Téléphone : +212 6 12 34 56 78</li>
         <li>Adresse : 123 Rue du Football, Casablanca, Maroc</li>
     </ul>
-    
-</div>
+</section>
 
-<!-- HISTOIRE, EFFECTIF, ADMINISTRATION -->
-<div id="history" class="hidden">
+<!-- HISTOIRE -->
+<section id="history">
     <h2>📜 Histoire du club</h2>
-    <img src="images\histoire.jpg" class="section-image" alt="Histoire du club">
-    <p>Le YAFA FC a été fondé en 1998 par un petit groupe de passionnés de football dans la région. Depuis sa création, le club a su se faire une place dans le championnat régional grâce à sa formation de jeunes talents et à ses performances sur le terrain.
+    <img src="images/histoire.jpg" class="section-image">
+    <p>Le YAFA FC a été fondé en 1998...</p>
+</section>
 
-Au fil des années, YAFA FC a remporté plusieurs titres régionaux et s’est distingué par la qualité de sa formation de joueurs. Le club se distingue également par son engagement envers la communauté : il organise régulièrement des ateliers et des stages pour les jeunes footballeurs afin de développer les compétences sportives et l’esprit d’équipe.
-
-L’histoire du club est donc celle d’une croissance progressive, basée sur la passion, le travail acharné et l’envie de représenter fièrement la région.</p>
-</div>
-
-<div id="effectif" class="hidden">
+<!-- EFFECTIF -->
+<section id="effectif">
     <h2>👥 Effectifs</h2>
-    <img src="images\effectif.jpg" class="section-image" alt="Effectifs">
-    <p>L’équipe actuelle du YAFA FC pour la saison 2025 combine expérience et jeunesse. Chaque joueur apporte son talent et sa motivation pour atteindre les objectifs du club.Le club mise sur une formation équilibrée, où chaque joueur connaît son rôle et participe activement au collectif. L’entraîneur travaille en étroite collaboration avec le préparateur physique pour assurer la meilleure condition physique et tactique des joueurs.</p>
-</div>
+    <img src="images/effectif.jpg" class="section-image">
+    <p>L’équipe 2025 combine expérience et jeunesse...</p>
+</section>
 
-<div id="admin" class="hidden">
+<!-- ADMIN -->
+<section id="admin">
     <h2>🏛️ Administration</h2>
-    <img src="images\adminis.jpg" class="section-image" alt="Administration">
+    <img src="images/adminis.jpg" class="section-image">
     <ul>
-        <li><b>Président :</b> Mme.COMPAORE YASMINE .</li>
-        <p>Supervise la vision stratégique du club et prend les décisions importantes concernant le développement global et la représentation officielle du club.</p>
-        <li><b>Directeur sportif :</b> M. OYODE FONA.</li>
-        <p>Responsable du suivi sportif, de la planification des recrutements, et de l’encadrement des joueurs et équipes.</p>
+        <li><b>Président :</b> Mme. COMPAORE YASMINE</li>
+        <li><b>Directeur sportif :</b> M. OYODE FONA</li>
         <li><b>Entraîneur :</b> Coach MESMEY ANGE</li>
-        <p>Chargé de la préparation technique, tactique et physique des joueurs, ainsi que de la stratégie pour les matchs et entraînements.</p>
-        <li><b>Chargé de communication / Marketing :</b> M.NKOUROUNA TONY</li>
-        <p>S’occupe de la promotion du club, des relations avec les sponsors, des médias et des réseaux sociaux pour renforcer l’image du YAFA FC.</p>
-
-        <p>Cette équipe administrative travaille main dans la main avec le staff technique et les joueurs pour assurer la croissance et la réussite du club à tous les niveaux.</p>
+        <li><b>Communication :</b> M. NKOUROUNA TONY</li>
     </ul>
-</div>
+</section>
 
 </div>
-
-<script>
-function showSection(id) {
-    document.querySelectorAll('#accueil, #equipe, #matchs, #contact, #history, #effectif, #admin').forEach(sec => sec.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
-    window.scrollTo({ top: document.getElementById(id).offsetTop - 50, behavior: 'smooth' });
-}
-</script>
 
 <footer>© 2025 YAFA FC — Tous droits réservés</footer>
 
