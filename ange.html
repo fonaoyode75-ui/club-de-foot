@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site officiel du Club Sportif : joueurs, actualités, matchs et contact">
+    <meta name="keywords" content="club sportif, football, joueurs, matchs">
+    <meta name="author" content="Club Sportif">
+    <title>YAFA FC - Site Officiel</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #003399;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #001f66;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #001f66;
+            border-radius: 5px;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section {
+            background: white;
+            margin: 25px 0;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #003399;
+            margin-bottom: 15px;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: #eef2ff;
+            border-radius: 8px;
+            padding: 15px;
+            width: 30%;
+            min-width: 250px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* -------- FORMULAIRE CONTACT -------- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #003399;
+        }
+
+        button {
+            background: #003399;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #001f66;
+        }
+
+        footer {
+            background: #003399;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* -------- RESPONSIVE -------- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            header h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>YAFA FC</h1>
+    <p>Bienvenue sur le site officiel du club</p>
+</header>
+
+<nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#joueurs">Joueurs</a>
+    <a href="produits.html">Produits</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+
+<main>
+
+    <!-- ACCUEIL -->
+    <section id="accueil">
+        <h2>Histoire du club</h2>
+        <p>
+            Fondé en 1920, notre club est l'un des plus anciens du pays.
+            Avec plusieurs titres nationaux et une base de supporters fidèle,
+            nous représentons fièrement notre ville.
+        </p>
+    </section>
+
+    <!-- JOUEURS -->
+    <section id="joueurs">
+        <h2>Joueurs vedettes</h2>
+
+        <div class="card-container">
+            <article class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPaoTwWUoyiuwnaoMNPf11mUEZGiGSvpzWuBq_bS4f4t9D54gyPQ828ua00iEIj9zpmREADjE0kcM4ori71yBd8_aIWdGDZYQPKLJ25JOwYw&s=10" alt="Attaquant du club">
+                <h3>Oyode Fona (#10)</h3>
+                <p>Position : Attaquant</p>
+                <p>Buts : 12 | Passes : 20</p>
+            </article>
+
+            <article class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZj2GFTZBsxSzAjKoCAe4IYOHQ7PIg-xNEaA&s" alt="Ailier du club">
+                <h3>Tony Nkourouna (#7)</h3>
+                <p>Position : Ailier</p>
+                <p>Buts : 25 | Passes : 15</p>
+            </article>
+
+            <article class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrhI1nwChF33_hW0xnBuJpQiiNt8YeWh9QDg&s" alt="Gardien du club">
+                <h3>Ange Mesmey (#1)</h3>
+                <p>Position : Gardien</p>
+                <p>Arrêts : 34</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- PAGE SUPPLÉMENTAIRE : PORTFOLIO / PRODUITS -->
+<section id="portfolio">
+    <h2>Produits du club</h2>
+    <p>
+        Découvrez les produits officiels du club disponibles dans notre boutique.
+    </p>
+
+    <div class="card-container">
+        <a href="produits.html" class="card" style="text-decoration:none; color:inherit;">
+            <h3>Maillot Officiel 2025</h3>
+            <p>Voir les détails du produit</p>
+        </a>
+
+        <a href="produits.html" class="card" style="text-decoration:none; color:inherit;">
+            <h3>Boutique du club</h3>
+            <p>Accéder à la boutique officielle</p>
+        </a>
+
+        <a href="produits.html" class="card" style="text-decoration:none; color:inherit;">
+            <h3>Équipements sportifs</h3>
+            <p>Découvrir les équipements disponibles</p>
+        </a>
+    </div>
+</section>
+
+
+    <!-- NEWS -->
+    <section id="news">
+        <h2>Dernières actualités</h2>
+
+        <div class="card-container">
+            <article class="card">
+                <h3>Lancement du site</h3>
+                <p>Le club est fier de lancer son nouveau site officiel.</p>
+            </article>
+
+            <article class="card">
+                <h3>Nouvelle recrue</h3>
+                <p>Un jeune milieu prometteur rejoint l'équipe.</p>
+            </article>
+
+            <article class="card">
+                <h3>Victoire 3-0</h3>
+                <p>Superbe performance lors du dernier match.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact</h2>
+
+        <form>
+            <label for="name">Nom</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+     Fait par : COMPAORE YASMINE – FONA OYODE – MESMEY ANGE – NKOROUNA TONY  © 2025
+</footer>
+
+</body>
+</html>
